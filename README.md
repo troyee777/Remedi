@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="remedi_logo.png" alt="ReMedi Logo" width="120"/>
+  <img src="static/images/remedi_logo.png" alt="ReMedi Logo" width="120"/>
 </p>
 
 ---

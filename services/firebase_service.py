@@ -2,19 +2,18 @@ import firebase_admin
 from firebase_admin import credentials, firestore, auth, storage
 
 cred = credentials.Certificate("firebase_config.json")
-firebase_admin.initialize_app(cred, {
-    'storageBucket': 'remedi_bucket1.appspot.com'
-})
+firebase_admin.initialize_app(cred)
 
 db = firestore.client()
-bucket = storage.bucket()
+
 
 # --- User Functions ---
-def add_user(email, username, password):
+def add_user(email, username):
     user_ref = db.collection("users").document(email)
     user_ref.set({
         "username": username,
         "email": email,
+        "created_at": firestore.SERVER_TIMESTAMP,
         "hydration_enabled": False
     })
 

@@ -37,8 +37,12 @@ body {
   font-weight: 700;
   color: #007acc;
 }
-.logo span {
+.logo a span {
   color: #00aaff;
+}
+.logo a {
+  text-decoration: none;
+  color:#007acc;
 }
 
 nav ul {
@@ -239,4 +243,208 @@ footer {
   .hero-image img {
     margin-top: 30px;
   }
+}
+/* Global mobile tweaks */
+@media (max-width: 768px) {
+  .navbar .container {
+    width: 94%;
+    padding: 10px 0;
+  }
+
+  nav ul {
+    gap: 14px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 6%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 80%;
+    max-width: 320px;
+    margin-top: 20px;
+  }
+}
+/* =========================================
+   About Us (Student Edition) Specific CSS
+   ========================================= */
+
+/* Section Wrapper */
+.about-section {
+  padding: 80px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: transparent; /* Inherits body bg */
+}
+
+/* Header Styles */
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.student-badge {
+  display: inline-block;
+  background: #e6f7ff;
+  color: #007acc;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  border: 1px solid #b3e0ff;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-header .subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Grid Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Text is slightly wider than card */
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* Text Section */
+.about-text h3 {
+  font-size: 1.8rem;
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  color: #222;
+  font-weight: 600;
+}
+
+/* Developer Card (Right Side) */
+.dev-card {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.1); /* Blue-ish shadow */
+  border: 1px solid #f0f8ff;
+}
+
+.dev-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.card-intro {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Tech List inside Card */
+.tech-list {
+  list-style: none;
+}
+
+.tech-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.tech-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.tech-list .icon {
+  font-size: 1.5rem;
+  background: #eef9ff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-right: 15px;
+}
+
+.tech-list .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-list .info strong {
+  font-size: 1rem;
+  color: #007acc;
+}
+
+.tech-list .info span {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Bottom Team Note */
+.team-note {
+  text-align: center;
+  background: linear-gradient(135deg, #007acc, #00aaff);
+  padding: 50px;
+  border-radius: 20px;
+  color: white;
+}
+
+.team-note p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.signature {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.team-note .btn {
+  background: white;
+  color: #007acc;
+  display: inline-block;
+}
+
+.team-note .btn:hover {
+  background: #f0f8ff;
+  color: #005fa3;
 }

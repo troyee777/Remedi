@@ -56,10 +56,10 @@ Remedi/
 │
 ├── templates/                 # HTML templates
 │   ├── base.html
+│   ├── home.html
 │   ├── dashboard.html
 │   ├── add_medicine.html
-│   ├── login.html
-│   ├── register.html
+│   ├── getstarted.html
 │   └── hydration.html (optional)
 │
 ├── static/                    # CSS, JS, and images

@@ -2,7 +2,9 @@ from flask import Flask, request, jsonify, session, render_template, redirect, u
 from services import firebase_service
 from firebase_admin import auth
 import os
-
+import dotenv
+# Load environment variables from .env file
+dotenv.load_dotenv()
 # Initialize Flask
 app = Flask(__name__)
 app.secret_key = "supersecretkey"  # change this before deployment
@@ -81,6 +83,22 @@ def google_login():
 
 
     return jsonify({"success": True})
+@app.route('/api/get_firebase_config', methods=['GET'])
+def get_firebase_config():
+    firebase_config = {
+        "apiKey": os.getenv("FIREBASE_API_KEY"),
+        "authDomain": os.getenv("FIREBASE_AUTH_DOMAIN"),
+        "projectId": os.getenv("FIREBASE_PROJECT_ID"),
+        "storageBucket": os.getenv("FIREBASE_STORAGE_BUCKET"),
+        "messagingSenderId": os.getenv("FIREBASE_MESSAGING_SENDER_ID"),
+        "appId": os.getenv("FIREBASE_APP_ID"),
+    }
+    return jsonify(firebase_config)
+
+
+
+
+
 @app.route('/logout')
 def logout():
     session.pop('user', None)

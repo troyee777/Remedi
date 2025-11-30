@@ -71,6 +71,7 @@ Remedi/
 ├── firebase_service.py    # Firestore CRUD helpers
 ├── scheduler_service.py   # Reminder + notification handling
 └── pdf_exporter.py        # PDF generation logic
+└── ocr.py                 # api calls and ocr output
 
 ````
 

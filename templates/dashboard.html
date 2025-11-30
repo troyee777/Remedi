@@ -1,11 +1,7 @@
-<!html page 2 of dashboard>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="remedidashh2.css">
+{% extends "base.html" %}
+{% block content %}
+<title>Dashboard</title>
+<link rel="stylesheet" href="/static/css/dashboard.css">
 </head>
 <body>
 
@@ -16,11 +12,11 @@
 </div>
     <div class="hello-box">
     <div class="hello-left">
-        <div class="hello-profile"></div>
+        <div class="hello-profile" style="background-image: url('{{user.photo_url}}');"></div>
     </div>
 
     <div class="hello-right">
-        <p class="hello-text">Hello {{ username or "User" }}</p>
+        <p class="hello-text">Hello {{user.name}} !</p>
     
     </div>
 </div>
@@ -52,6 +48,4 @@
     </div>
 
 </div>
-
-</body>
-</html>
+{% endblock %}

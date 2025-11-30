@@ -37,7 +37,7 @@ if (googleBtn) {
 
       if (response.ok) {
         // backend created session, now go to dashboard
-        window.location.href = "/";
+        window.location.href = "/dashboard";
       } else {
         const data = await response.json();
         alert("Server error: " + (data.error || "Unknown error"));
@@ -80,7 +80,7 @@ if (signupForm) {
       }
 
       // 4) Backend created session → go to dashboard/home
-      window.location.href = "/";
+      window.location.href = "/dashboard";
     } catch (err) {
       console.error(err);
       alert("Signup failed: " + err.message);
@@ -120,7 +120,7 @@ if (signinForm) {
       }
 
       // 4) Session created → redirect
-      window.location.href = "/";
+      window.location.href = "/dashboard";
     } catch (err) {
       console.error(err);
       alert("signin failed: " + err.message);

@@ -1,5 +1,5 @@
 const firebaseConfig = {
- apiKey: "AIzaSyCQqTegGcC1gSn71elLSifOIhHcEn6jx8E",
+ apiKey: "AIzaSyCQqTegGcC1gSn71elLSifOIhHcEn6",
  authDomain: "remedi-a257e.firebaseapp.com",
  projectId: "remedi-a257e",
  storageBucket: "remedi-a257e.firebasestorage.app",

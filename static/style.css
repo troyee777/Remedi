@@ -37,8 +37,12 @@ body {
   font-weight: 700;
   color: #007acc;
 }
-.logo span {
+.logo a span {
   color: #00aaff;
+}
+.logo a {
+  text-decoration: none;
+  color:#007acc;
 }
 
 nav ul {
@@ -240,3 +244,48 @@ footer {
     margin-top: 30px;
   }
 }
+
+
+
+.instruction{margin:12px 0 20px;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+
+/* Left column */
+.list{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);border-radius:8px;box-shadow:0 1px 2px rgba(16,24,40,0.04);display:flex;overflow:hidden}
+.accent{width:6px}
+.card-main{flex:1;padding:14px}
+.card-head{display:flex;align-items:center;justify-content:space-between}
+.med-title{display:flex;gap:12px;align-items:center}
+.dot{width:26px;height:26px;border-radius:50%;flex-shrink:0;border:2px solid rgba(0,0,0,0.06)}
+.name{font-weight:700;font-size:16px}
+.sub{color:var(--muted);font-size:13px}
+.toggle-btn{background:none;border:0;font-size:18px;cursor:pointer;padding:6px}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid #e6e9ef;background:#fff;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:13px}
+.btn.danger{border-color:var(--danger);color:var(--danger)}
+
+.summary{margin-top:10px;color:var(--muted);font-size:13px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.chip{background:#f3f4f6;padding:6px 10px;border-radius:999px;font-size:13px}
+.tiny{font-size:12px;color:var(--muted)}
+
+/* Collapsed state */
+.collapsed .card-main{padding:12px}
+.collapsed .card-body{display:none}
+
+/* Right column */
+.panel{position:sticky;top:20px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
+.panel h4{margin:0 0 8px 0}
+.stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eef2f7;color:var(--muted)}
+.chart-wrap{display:flex;justify-content:center;align-items:center;padding:14px}
+.cta{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.primary{background:linear-gradient(90deg,#2563eb,#7c3aed);color:#fff;border:0;padding:10px;border-radius:8px;cursor:pointer}
+.secondary{background:#fff;border:1px solid #e6e9ef;padding:8px;border-radius:8px;cursor:pointer}
+
+.error{background:rgba(239,68,68,0.06);color:var(--danger);padding:8px;border-radius:6px;margin-top:8px}
+.success{background:rgba(16,185,129,0.06);color:var(--success);padding:8px;border-radius:6px;margin-top:8px}
+
+/* Responsive */
+@media (max-width:900px){.grid{grid-template-columns:1fr}.panel{position:static;margin-top:12px}}

@@ -1,11 +1,3 @@
-const firebaseConfig = {
- apiKey: "AIzaSyCQqTegGcC1gSn71elLSifOIhHcEn6jx8E",
- authDomain: "remedi-a257e.firebaseapp.com",
- projectId: "remedi-a257e",
- storageBucket: "remedi-a257e.firebasestorage.app",
- messagingSenderId: "510914931513",
- appId: "1:510914931513:web:0a16e91e0b8d450f3316e8"
-};
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
 import {
   getAuth,
@@ -14,8 +6,11 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
-
-const app = initializeApp(firebaseConfig);
+async function fetchFirebaseConfig() {
+  const response = await fetch('/api/get_firebase_config');
+  return await response.json();
+}
+const app = initializeApp(await fetchFirebaseConfig());
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
@@ -42,7 +37,7 @@ if (googleBtn) {
 
       if (response.ok) {
         // backend created session, now go to dashboard
-        window.location.href = "/";
+        window.location.href = "/dashboard";
       } else {
         const data = await response.json();
         alert("Server error: " + (data.error || "Unknown error"));
@@ -85,7 +80,7 @@ if (signupForm) {
       }
 
       // 4) Backend created session → go to dashboard/home
-      window.location.href = "/";
+      window.location.href = "/dashboard";
     } catch (err) {
       console.error(err);
       alert("Signup failed: " + err.message);
@@ -125,7 +120,7 @@ if (signinForm) {
       }
 
       // 4) Session created → redirect
-      window.location.href = "/";
+      window.location.href = "/dashboard";
     } catch (err) {
       console.error(err);
       alert("signin failed: " + err.message);
